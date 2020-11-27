@@ -1,0 +1,69 @@
+[
+  {
+    "id": "opus-vr",
+    "title": "OpusVR",
+    "header": "My experience co-founding and building OpusVR",
+    "description": "Features a WebVR engine that provides gallery curators the necessary set of features to build their own virtual gallery. Spaces are composed with uploaded image and model assets via web and VR user interfaces.",
+    "technologies": "A-Frame, Three.js, React.js",
+    "cards": [
+      {
+        "id": "opus-vr-pitch-deck",
+        "title": "Pitch Deck",
+        "description": "Discusses the cost inefficiencies at art fairs and the limited exposure of small brick-and-mortar art galleries. Proposes a resolution with a platform that enables showcasing and marketing artworks in VR. Justifies with market validation, revenue streams, and vision.",
+        "asset": {
+          "type": "image/png",
+          "src": "images/opus-vr-pitch-deck.png"
+        }
+      },
+      {
+        "id": "opus-vr-demo",
+        "title": "Demo",
+        "asset": {
+          "type": "video/mp4",
+          "src": "videos/opus-vr-demo.mp4"
+        }
+      },
+      {
+        "id": "opus-vr-features",
+        "title": "Features",
+        "asset": {
+          "type": "image/png",
+          "src": "images/opus-vr-features.png"
+        }
+      }
+    ]
+  },
+  {
+    "id": "chip-seq",
+    "title": "ChIP Sequencing 3D Genome",
+    "header": "Evaluating the relationships between transcription factor binding and 3D genome structure",
+    "description": "Big data pipelines developed to identify patterns in transcription factor binding and 3D genome structure.",
+    "technologies": "Python, R",
+    "cards": [
+      {
+        "id": "chip-seq-poster",
+        "title": "Poster",
+        "asset": {
+          "type": "image/png",
+          "src": "images/chip-seq-poster.png"
+        }
+      },
+      {
+        "id": "chip-seq-summary",
+        "title": "Summary",
+        "asset": {
+          "type": "application/pdf",
+          "src": "pdf/chip-seq-summary.pdf"
+        }
+      }
+    ]
+  },
+  {
+    "id": "ipore-seq",
+    "title": "iPore",
+    "header": "",
+    "description": "A React Native mobile application used to work with nanopore sequencing data from Oxford Nanopore.",
+    "technologies": "React Native, Node.js, Express.js, MongoDB, Docker",
+    "cards": []
+  }
+]

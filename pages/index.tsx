@@ -1,20 +1,30 @@
 import Head from 'next/head';
-import { Badge } from 'react-bootstrap';
-import styles from '../styles/Home.module.css';
+import React, { Fragment } from 'react';
+import UAParser from 'ua-parser-js';
+import Main from '../components/Main';
 
-export default function Home() {
+const Index = ({ deviceType }) => {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Joseph Sayad</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <h1>
-          <Badge variant="primary">Hello World!</Badge>
-        </h1>
-      </main>
-      <footer className={styles.footer}></footer>
+      <Main />
     </div>
   );
-}
+};
+
+Index.getInitialProps = ({ req }) => {
+  const userAgent = req ? req.headers['user-agent'] : navigator.userAgent;
+  const parser = new UAParser();
+
+  parser.setUA(userAgent);
+
+  const result = parser.getResult();
+  const deviceType = (result.device && result.device.type) || 'desktop';
+
+  return { deviceType };
+};
+
+export default Index;
