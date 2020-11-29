@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --ext .ts,.tsx"
+    "lint": "eslint --ext .ts,.tsx",
+    "type-check": "tsc --noEmit"
   },
   "husky": {
     "hooks": {
