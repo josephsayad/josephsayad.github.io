@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  text-rendering: optimizeLegibility;
 }
 
 a {
@@ -13,4 +14,142 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+/* Main */
+
+#main-container {
+  background: linear-gradient(#000000, #292929);
+  height: 100vh;
+}
+
+#logo-splash-container {
+  height: 22%;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+}
+
+.logo-splash {
+  stroke-dasharray: 350;
+  stroke-dashoffset: 350;
+  animation: dash 3.5s linear 0s alternate 2;
+  opacity: 0;
+  margin: 5px;
+}
+
+@keyframes dash {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+/* Navbar */
+
+#navbar {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  font-family: 'Lato';
+  z-index: 10;
+  height: 70px;
+  padding: 8px 50px;
+  animation: visible 1s linear;
+}
+
+#navbar > .logo {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  position: absolute;
+  z-index: 10;
+}
+
+.menu-button {
+  margin-top: 5px;
+  margin-left: auto;
+  display: flex;
+  color: #cecece;
+  cursor: pointer;
+  background-color: transparent;
+  flex-direction: column;
+  justify-content: space-around;
+  border: none;
+  z-index: 10;
+  width: 27.55px;
+  height: 19.77px;
+}
+
+.menu-button:focus {
+  outline: none;
+}
+
+.links {
+  list-style: none;
+}
+
+#navbar > .links {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 0px;
+  margin: 0px;
+  color: #ffffff;
+  font-family: 'Lato';
+  font-size: 14px;
+  padding-top: 5px;
+  margin-top: 8px;
+  margin-left: auto;
+}
+
+#navbar > .links > li {
+  margin: 0px 30px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+}
+
+#navbar > .links > li:hover {
+  border-bottom: 2px solid #fff;
+  animation: underline 0.5s ease forwards;
+}
+
+@keyframes visible {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes underline {
+  from {
+    border-bottom: 2px solid transparent;
+  }
+
+  to {
+    border-bottom: 2px solid #fff;
+    opacity: 1;
+  }
 }
