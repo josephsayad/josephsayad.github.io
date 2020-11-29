@@ -1,0 +1,6 @@
+/**
+ * @fileoverview Contains generic TypeScript types that may be frequently used
+ * throughout one to many TSX files in the project.
+ */
+
+type Nullable<T> = T | null;
