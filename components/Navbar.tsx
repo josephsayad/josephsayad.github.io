@@ -4,11 +4,16 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { MobileMenu } from '../styles/global';
 
-const Navbar = ({ deviceType, options }) => {
-  const [open, setOpen] = useState(false);
-  const navItems = (
+type Props = {
+  deviceType: string;
+  options: string[];
+};
+
+const Navbar = ({ deviceType, options }: Props): React.ReactElement => {
+  const [open, setOpen] = useState<boolean>(false);
+  const navItems: React.ReactElement = (
     <ul className="links">
-      {options.map((option) => (
+      {options.map((option: string) => (
         <li key={option}>
           <a href="/">{option}</a>
         </li>

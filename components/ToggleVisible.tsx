@@ -1,8 +1,18 @@
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 
-const ToggleVisible = ({ isVisible, children, delay }) => {
-  const [visible, setVisible] = useState(isVisible);
+type Props = {
+  isVisible: boolean;
+  children: React.ReactElement;
+  delay: number;
+};
+
+const ToggleVisible = ({
+  isVisible,
+  children,
+  delay,
+}: Props): Nullable<React.ReactElement> => {
+  const [visible, setVisible] = useState<boolean>(isVisible);
 
   useEffect(() => {
     setTimeout(() => {

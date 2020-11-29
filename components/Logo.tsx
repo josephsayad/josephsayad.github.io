@@ -1,6 +1,12 @@
 import PropTypes from 'prop-types';
 
-const Logo = ({ classname, minX, width }) => (
+type Props = {
+  classname: string;
+  minX?: string;
+  width: number;
+};
+
+const Logo = ({ classname, minX, width }: Props): React.ReactElement => (
   <svg
     className={classname}
     width={width}

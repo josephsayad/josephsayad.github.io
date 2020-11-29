@@ -4,9 +4,21 @@ import ToggleVisible from './ToggleVisible';
 import Logo from './Logo';
 import Navbar from './Navbar';
 
-const Main = ({ deviceType, sections }) => {
-  const [activeView, setActiveView] = useState('about');
-  const delay = 7000;
+type Sections = {
+  about: string;
+  project: string;
+  work: string;
+  resume: string;
+};
+
+type Props = {
+  deviceType: string;
+  sections: Sections;
+};
+
+const Main = ({ deviceType, sections }: Props): React.ReactElement => {
+  const [activeView, setActiveView] = useState<string>('about');
+  const delay: number = 7000;
 
   return (
     <main id="main-container">
