@@ -2,9 +2,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   text-rendering: optimizeLegibility;
+  font-family: 'Roboto';
 }
 
 a {
@@ -65,10 +64,9 @@ a {
   align-items: center;
   position: relative;
   width: 100%;
-  font-family: 'Lato';
   z-index: 10;
   height: 70px;
-  padding: 8px 50px;
+  padding: 2em 4em;
   animation: visible 1s linear;
 }
 
@@ -114,8 +112,7 @@ a {
   padding: 0px;
   margin: 0px;
   color: #ffffff;
-  font-family: 'Lato';
-  font-size: 14px;
+  font-size: 17px;
   padding-top: 5px;
   margin-top: 8px;
   margin-left: auto;
@@ -151,5 +148,104 @@ a {
   to {
     border-bottom: 2px solid #fff;
     opacity: 1;
+  }
+}
+
+/* About */
+
+#about {
+  color: #fff;
+  margin: 8em auto;
+  padding: 0em 5em;
+}
+
+h2 {
+  margin: 0px;
+  font-size: clamp(20px, 8vw, 50px);
+  margin-bottom: 15px;
+}
+
+h3 {
+  margin: 0px;
+  font-size: clamp(0px, 6vw, 35px);
+  opacity: 0.6;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+#interests {
+  height: 145px;
+}
+
+span {
+  font-size: clamp(0px, 6vw, 35px);
+  opacity: 0.6;
+  font-weight: 400;
+}
+
+.Typist .Cursor {
+  display: inline-block;
+  animation: blink 1s linear infinite;
+  opacity: 1;
+  width: 25px;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#contact-btn {
+  font-size: 17px;
+  padding: 0.95rem 1.75rem;
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: clamp(14px, 7vw, 17px);
+}
+
+#contact-btn:hover {
+  animation: hover 0.5s ease forwards;
+}
+
+@keyframes hover {
+  from {
+    color: #fff;
+    background-color: transparent;
+  }
+
+  to {
+    color: #000;
+    background-color: white;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #about {
+    margin-top: 5.5em;
+  }
+
+  #navbar,
+  #about {
+    padding: 2em;
+  }
+
+  #interests {
+    height: 135px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  span {
+    line-height: 30px;
   }
 }

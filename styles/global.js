@@ -6,13 +6,13 @@ export const MobileMenu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: linear-gradient(#000000, #292929);
+  background: linear-gradient(#000000, #191919);
   height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
   transition: transform 0.3s ease-in-out;
-  transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(-100%)')};
+  transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(-115%)')};
   width: 100%;
 
   ul {
@@ -30,5 +30,9 @@ export const MobileMenu = styled.nav`
     transition: color 0.3s linear;
     font-size: 1.35rem;
     text-align: center;
+  }
+
+  a {
+    padding: 2rem;
   }
 `;
