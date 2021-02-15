@@ -4,13 +4,19 @@ type Props = {
   classname: string;
   minX?: string;
   width: number;
+  height?: string;
 };
 
-const Logo = ({ classname, minX, width }: Props): React.ReactElement => (
+const Logo = ({
+  classname,
+  minX,
+  width,
+  height,
+}: Props): React.ReactElement => (
   <svg
     className={classname}
     width={width}
-    height="100"
+    height={height || '100'}
     viewBox={`${minX} 250 1052 550`}
   >
     <path
@@ -26,10 +32,12 @@ Logo.propTypes = {
   classname: PropTypes.string.isRequired,
   minX: PropTypes.string,
   width: PropTypes.number.isRequired,
+  height: PropTypes.number,
 };
 
 Logo.defaultProps = {
   minX: '0',
+  height: null,
 };
 
 export default Logo;

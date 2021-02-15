@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Main from '../components/Main';
 
 const Index = (): React.ReactElement => {
-  const deviceType: string = useDeviceType();
+  const deviceDetail: DeviceDetail = useDeviceDetail();
 
   return (
     <div>
@@ -12,20 +12,26 @@ const Index = (): React.ReactElement => {
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Roboto|Lato"
+          href="https://fonts.googleapis.com/css?family=Roboto:400,700"
         />
       </Head>
-      <Main deviceType={deviceType} />
+      <Main deviceDetail={deviceDetail} />
     </div>
   );
 };
 
-function useDeviceType() {
-  const [deviceType, setDeviceType] = useState<string>('desktop');
+function useDeviceDetail() {
+  const [deviceDetail, setDeviceDetail] = useState<DeviceDetail>({
+    type: 'desktop',
+    windowWidth: null,
+  });
 
   useEffect(() => {
     function handleResize() {
-      setDeviceType(window.innerWidth < 670 ? 'mobile' : 'desktop');
+      setDeviceDetail({
+        type: window.innerWidth < 670 ? 'mobile' : 'desktop',
+        windowWidth: window.innerWidth,
+      });
     }
 
     window.addEventListener('resize', handleResize);
@@ -34,7 +40,7 @@ function useDeviceType() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  return deviceType;
+  return deviceDetail;
 }
 
 export default Index;

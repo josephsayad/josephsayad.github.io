@@ -1,23 +1,20 @@
-import { useState } from 'react';
 import PropTypes from 'prop-types';
 import ToggleVisible from './ToggleVisible';
 import Logo from './Logo';
 import Navbar from './Navbar';
-
-type Sections = {
-  about: string;
-  project: string;
-  work: string;
-  resume: string;
-};
+import About from './About';
 
 type Props = {
-  deviceType: string;
-  sections: Sections;
+  deviceDetail: DeviceDetail;
+  navOptions: NavOption[];
+  footerOptions: NavOption[];
 };
 
-const Main = ({ deviceType, sections }: Props): React.ReactElement => {
-  const [activeView, setActiveView] = useState<string>('about');
+const Main = ({
+  deviceDetail: { type, windowWidth },
+  navOptions,
+  footerOptions,
+}: Props): React.ReactElement => {
   const delay: number = 7000;
 
   return (
@@ -28,29 +25,43 @@ const Main = ({ deviceType, sections }: Props): React.ReactElement => {
         </div>
       </ToggleVisible>
       <ToggleVisible delay={delay}>
-        <Navbar deviceType={deviceType} options={Object.values(sections)} />
+        <div id="content">
+          <Navbar deviceType={type} options={navOptions} />
+          <About windowWidth={windowWidth} />
+        </div>
       </ToggleVisible>
     </main>
   );
 };
 
 Main.propTypes = {
-  deviceType: PropTypes.string.isRequired,
-  sections: PropTypes.shape({
-    about: PropTypes.string.isRequired,
-    project: PropTypes.string.isRequired,
-    work: PropTypes.string.isRequired,
-    resume: PropTypes.string.isRequired,
+  deviceDetail: PropTypes.shape({
+    type: PropTypes.string.isRequired,
+    windowWidth: PropTypes.number,
   }),
+  navOptions: PropTypes.arrayOf(
+    PropTypes.shape({
+      option: PropTypes.string.isRequired,
+      link: PropTypes.string.isRequired,
+    }).isRequired
+  ),
+  footerOptions: PropTypes.arrayOf(
+    PropTypes.shape({
+      option: PropTypes.string.isRequired,
+      link: PropTypes.string.isRequired,
+    }).isRequired
+  ),
 };
 
 Main.defaultProps = {
-  sections: {
-    about: 'About',
-    project: 'Projects',
-    work: 'Experience',
-    resume: 'Resume',
-  },
+  navOptions: [
+    { option: 'About', link: '/' },
+    { option: 'Resume', link: '/resume.pdf' },
+  ],
+  footerOptions: [
+    { option: 'github', link: 'https://github.com/josephsayad' },
+    { option: 'linkedin', link: 'https://www.linkedin.com/in/josephsayad/' },
+  ],
 };
 
 export default Main;

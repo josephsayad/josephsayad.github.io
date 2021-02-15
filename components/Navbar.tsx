@@ -6,16 +6,16 @@ import { MobileMenu } from '../styles/global';
 
 type Props = {
   deviceType: string;
-  options: string[];
+  options: NavOption[];
 };
 
 const Navbar = ({ deviceType, options }: Props): React.ReactElement => {
   const [open, setOpen] = useState<boolean>(false);
   const navItems: React.ReactElement = (
     <ul className="links">
-      {options.map((option: string) => (
+      {options.map(({ option, link }: NavOption) => (
         <li key={option}>
-          <a href="/">{option}</a>
+          <a href={link}>{option}</a>
         </li>
       ))}
     </ul>
@@ -24,7 +24,7 @@ const Navbar = ({ deviceType, options }: Props): React.ReactElement => {
   return (
     <div id="navbar">
       <div className="logo">
-        <Logo classname="logo-name" minX="90" width={50} />
+        <Logo classname="logo-name" minX="100" width={55} />
       </div>
       {deviceType === 'mobile' && (
         <>
