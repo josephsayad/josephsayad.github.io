@@ -22,7 +22,7 @@ const About = ({ interests, windowWidth }: Props): React.ReactElement => {
   return (
     <div id="about">
       <div id="intro">
-        <h2>Joseph Sayad</h2>
+        <h2>Joseph Sayad.</h2>
         <h3>
           Software engineer with a focus in data engineering
           {windowWidth && windowWidth >= 1175 ? <br /> : null} and full stack
@@ -35,7 +35,7 @@ const About = ({ interests, windowWidth }: Props): React.ReactElement => {
             <Typist avgTypingDelay={avgTypingDelay} onTypingDone={resetTyping}>
               <span>I enjoy </span>
               {interests.flatMap((interest, index) => [
-                <span key={interest} style={{ opacity: 1 }}>
+                <span key={interest} style={{ opacity: 0.95 }}>
                   {interest}
                 </span>,
                 <Typist.Backspace
@@ -52,7 +52,9 @@ const About = ({ interests, windowWidth }: Props): React.ReactElement => {
           ) : null}
         </div>
       </div>
-      <button id="contact-btn">Get in Touch</button>
+      <a id="contact-btn" href="mailto:josephsayad95@gmail.com">
+        Get in Touch
+      </a>
     </div>
   );
 };

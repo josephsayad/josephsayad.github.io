@@ -163,6 +163,7 @@ h2 {
   margin: 0px;
   font-size: clamp(20px, 8vw, 50px);
   margin-bottom: 15px;
+  opacity: 0.95;
 }
 
 h3 {
@@ -174,7 +175,7 @@ h3 {
 }
 
 #interests {
-  height: 145px;
+  height: 170px;
 }
 
 span {
@@ -237,10 +238,6 @@ span {
   #navbar,
   #about {
     padding: 2em;
-  }
-
-  #interests {
-    height: 135px;
   }
 }
 
