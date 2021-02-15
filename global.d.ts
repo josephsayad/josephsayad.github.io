@@ -4,3 +4,13 @@
  */
 
 type Nullable<T> = T | null;
+
+type DeviceDetail = {
+  type: string;
+  windowWidth: Nullable<number>;
+};
+
+type NavOption = {
+  option: string;
+  link: string;
+};
