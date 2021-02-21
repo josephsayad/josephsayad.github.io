@@ -111,8 +111,8 @@ a {
   align-items: center;
   padding: 0px;
   margin: 0px;
-  color: #ffffff;
-  font-size: 17px;
+  color: #e5e5e5;
+  font-size: 16px;
   padding-top: 5px;
   margin-top: 8px;
   margin-left: auto;
@@ -128,6 +128,7 @@ a {
 #navbar > .links > li:hover {
   border-bottom: 2px solid #fff;
   animation: underline 0.5s ease forwards;
+  color: #fff;
 }
 
 @keyframes visible {
@@ -146,7 +147,7 @@ a {
   }
 
   to {
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid #e5e5e5;
     opacity: 1;
   }
 }
@@ -154,34 +155,35 @@ a {
 /* About */
 
 #about {
-  color: #fff;
+  color: #e5e5e5;
   margin: 8em auto;
   padding: 0em 5em;
 }
 
 h2 {
   margin: 0px;
-  font-size: clamp(20px, 8vw, 50px);
+  font-size: clamp(20px, 8vw, 45px);
   margin-bottom: 15px;
-  opacity: 0.95;
+  color: #fff;
 }
 
 h3 {
   margin: 0px;
-  font-size: clamp(0px, 6vw, 35px);
+  font-size: clamp(0px, 6vw, 30px);
   opacity: 0.6;
   font-weight: 400;
   margin-bottom: 15px;
 }
 
 #interests {
-  height: 170px;
+  height: 175px;
 }
 
 span {
-  font-size: clamp(0px, 6vw, 35px);
+  font-size: clamp(0px, 6vw, 30px);
   opacity: 0.6;
   font-weight: 400;
+  color: #fff !important;
 }
 
 .Typist .Cursor {
@@ -203,49 +205,77 @@ span {
   }
 }
 
-#contact-btn {
-  font-size: 17px;
-  padding: 0.95rem 1.75rem;
-  border: 2px solid white;
-  background-color: transparent;
-  color: white;
+.button {
+  display: inline-block;
+  line-height: 40px;
+  padding: 7px 42px;
+  background: #e5e5e5;
+  letter-spacing: 0.25px;
+  text-decoration: none;
+  transition: all 0.15s ease;
   cursor: pointer;
   border-radius: 3px;
-  font-size: clamp(14px, 7vw, 17px);
+  font-size: clamp(10px, 7vw, 16px);
+  box-shadow: rgb(0 0 0 / 63%) 0px 2px 8px, #292929 0px 0px 0px 1px;
+  color: #292929;
+  margin: 0px 25px 25px 0px;
+  text-align: center;
+  margin-bottom: 25px;
 }
 
-#contact-btn:hover {
-  animation: hover 0.5s ease forwards;
+.button:hover {
+  transform: translate(0px, -2px);
 }
 
-@keyframes hover {
-  from {
-    color: #fff;
-    background-color: transparent;
-  }
+#resume-button {
+  background-color: #151515;
+  color: #e5e5e5;
+}
 
-  to {
-    color: #000;
-    background-color: white;
-  }
+#contact-button:hover {
+  background-color: #ffffff;
+}
+
+#resume-button:hover {
+  background-color: #181818;
 }
 
 @media only screen and (max-width: 600px) {
-  #about {
-    margin-top: 5.5em;
-  }
-
   #navbar {
     padding: 2.5em 2em;
   }
 
   #about {
+    margin-top: 3em;
     padding: 1.5em 2em 2em 2em;
+  }
+
+  #contact-button {
+    background-color: #ffffff;
+  }
+
+  #resume-button {
+    background-color: #181818;
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
+  .button {
+    width: 100%;
+    padding: 2px 42px;
+  }
+
+  #resume-button {
+    border-radius: 0px;
+  }
+
   span {
     line-height: 30px;
+  }
+}
+
+@media only screen and (max-height: 640px) {
+  #interests {
+    height: 110px;
   }
 }

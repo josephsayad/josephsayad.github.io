@@ -35,7 +35,7 @@ const About = ({ interests, windowWidth }: Props): React.ReactElement => {
             <Typist avgTypingDelay={avgTypingDelay} onTypingDone={resetTyping}>
               <span>I enjoy </span>
               {interests.flatMap((interest, index) => [
-                <span key={interest} style={{ opacity: 0.95 }}>
+                <span key={interest} style={{ opacity: 1 }}>
                   {interest}
                 </span>,
                 <Typist.Backspace
@@ -52,8 +52,15 @@ const About = ({ interests, windowWidth }: Props): React.ReactElement => {
           ) : null}
         </div>
       </div>
-      <a id="contact-btn" href="mailto:josephsayad95@gmail.com">
+      <a
+        className="button"
+        id="contact-button"
+        href="mailto:josephsayad95@gmail.com"
+      >
         Get in Touch
+      </a>
+      <a className="button" id="resume-button" href="/resume.pdf">
+        Resume
       </a>
     </div>
   );

@@ -11,6 +11,7 @@ type Props = {
 
 const Navbar = ({ deviceType, options }: Props): React.ReactElement => {
   const [open, setOpen] = useState<boolean>(false);
+
   const navItems: React.ReactElement = (
     <ul className="links">
       {options.map(({ option, link }: NavOption) => (

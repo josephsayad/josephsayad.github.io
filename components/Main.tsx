@@ -55,12 +55,8 @@ Main.propTypes = {
 
 Main.defaultProps = {
   navOptions: [
-    { option: 'About', link: '/' },
-    { option: 'Resume', link: '/resume.pdf' },
-  ],
-  footerOptions: [
-    { option: 'github', link: 'https://github.com/josephsayad' },
-    { option: 'linkedin', link: 'https://www.linkedin.com/in/josephsayad/' },
+    { option: 'Github', link: 'https://github.com/josephsayad' },
+    { option: 'Linkedin', link: 'https://www.linkedin.com/in/josephsayad/' },
   ],
 };
 
