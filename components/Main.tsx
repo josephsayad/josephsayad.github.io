@@ -7,13 +7,11 @@ import About from './About';
 type Props = {
   deviceDetail: DeviceDetail;
   navOptions: NavOption[];
-  footerOptions: NavOption[];
 };
 
 const Main = ({
   deviceDetail: { type, windowWidth },
   navOptions,
-  footerOptions,
 }: Props): React.ReactElement => {
   const delay: number = 7000;
 
@@ -40,12 +38,6 @@ Main.propTypes = {
     windowWidth: PropTypes.number,
   }),
   navOptions: PropTypes.arrayOf(
-    PropTypes.shape({
-      option: PropTypes.string.isRequired,
-      link: PropTypes.string.isRequired,
-    }).isRequired
-  ),
-  footerOptions: PropTypes.arrayOf(
     PropTypes.shape({
       option: PropTypes.string.isRequired,
       link: PropTypes.string.isRequired,
