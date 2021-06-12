@@ -25,7 +25,12 @@ const Navbar = ({ deviceType, options }: Props): React.ReactElement => {
   return (
     <div id="navbar">
       <div className="logo">
-        <Logo classname="logo-name" minX="100" width={55} />
+        <Logo
+          classname="logo-name"
+          viewBoxMinX="100"
+          width={55}
+          viewBoxHeight="440"
+        />
       </div>
       {deviceType === 'mobile' && (
         <>

@@ -52,16 +52,18 @@ const About = ({ interests, windowWidth }: Props): React.ReactElement => {
           ) : null}
         </div>
       </div>
-      <a
-        className="button"
-        id="contact-button"
-        href="mailto:josephsayad95@gmail.com"
-      >
-        Get in Touch
-      </a>
-      <a className="button" id="resume-button" href="/resume.pdf">
-        Resume
-      </a>
+      <div id="contact-button-container">
+        <a
+          className="button"
+          id="contact-button"
+          href="mailto:josephsayad95@gmail.com"
+        >
+          Get in Touch
+        </a>
+        <a className="button" id="resume-button" href="/resume.pdf">
+          Resume
+        </a>
+      </div>
     </div>
   );
 };
