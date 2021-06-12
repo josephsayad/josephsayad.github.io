@@ -13,7 +13,7 @@ const Main = ({
   deviceDetail: { type, windowWidth },
   navOptions,
 }: Props): React.ReactElement => {
-  const delay: number = 7000;
+  const delay: number = 3500;
 
   return (
     <main id="main-container">

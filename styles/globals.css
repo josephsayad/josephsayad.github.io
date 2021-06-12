@@ -22,6 +22,15 @@ a {
   height: 100vh;
 }
 
+div#logo-splash-container,
+div#about {
+  zoom: 85%;
+}
+
+.links {
+  zoom: 90%;
+}
+
 #logo-splash-container {
   height: 22%;
   overflow: auto;
@@ -37,7 +46,7 @@ a {
 .logo-splash {
   stroke-dasharray: 350;
   stroke-dashoffset: 350;
-  animation: dash 3.5s linear 0s alternate 2;
+  animation: dash 1.75s linear 0s alternate 2;
   opacity: 0;
   margin: 5px;
 }
@@ -260,9 +269,14 @@ span {
 }
 
 @media only screen and (max-width: 450px) {
+  #contact-button-container {
+    margin-top: 100px;
+  }
+
   .button {
     width: 100%;
     padding: 2px 42px;
+    margin: 0px 0px 25px 0px;
   }
 
   #resume-button {
